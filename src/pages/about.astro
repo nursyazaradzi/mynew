@@ -1,24 +1,16 @@
 ---
+import Layout from '../layouts/BlogPost.astro';
 ---
+<Layout
+    title="About Me"
+    description="Lorem ipsum dolor sit amet"
+    pubDate={new Date('August 08 2021')}
+    updatedDate={new Date ('August 08 2022')}
+    heroImage=""
+  >
+    <p>
+      This is my About page. I will add more content here soon! 
+    </p>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
 
-    <h1>About Me</h1>
-    <h2>This is my firstime use and my new Astro site!</h2>
-
-    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-
-    <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-  </body>
-</html>
+</Layout>
