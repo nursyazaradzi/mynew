@@ -1,19 +1,33 @@
 ---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
+const pageTitle = "Home Page";
 ---
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+</BaseLayout>
 
-<html lang="en">
+<br><br>
+Read more <a href="/authors/sonali/">about Sonali</a>
+
+<html>
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
+    <title>My page</title>
+    <script src="https://unpkg.com/htmx.org@1.9.6"
+      integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+      crossorigin="anonymous"></script>
   </head>
-  <body>
-	<a href="/">Home</a>
-    <a href="/about/">About</a>
-	<a href="/blog/">Blog</a>
-
-    <h1>My Astro Site</h1>
-  </body>
 </html>
+<section>
+  <div id="parent-div">Target here</div>
+
+  <button hx-post="/partials/clicked/"
+    hx-trigger="click"
+    hx-target="#parent-div"
+    hx-swap="innerHTML"
+  >
+      Click Me!
+  </button>
+</section>

@@ -1,0 +1,7 @@
+---
+// Create a custom table with named slot placeholders for head and body content
+---
+<table class="bg-white">
+    <thead class="sticky top-0 bg-white"><slot name="header"/></thead>
+    <tbody class="[&_tr:nth-child(odd)]:bg-gray-100"><slot name="body"/></tbody>
+  </table>
